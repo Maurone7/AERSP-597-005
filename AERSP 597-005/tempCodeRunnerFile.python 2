@@ -1,0 +1,13 @@
+import sympy as sym
+import numpy as np
+import matplotlib.pyplot as plt
+
+x, y, z = sym.symbols('x y z')
+C_1, C_2 = sym.symbols('C_1 C_2')
+E, v = sym.symbols('E v')
+u = C_2*x
+tilda_sigma = sym.Matrix([sym.diff(u, x), 0, 0]) - z*sym.Matrix([sym.diff(sym.diff(u, x), x), 0, 0])
+compliance_matrix = sym.Matrix([[1/E, -v/E, 0],[-v/E, 1/E, 0],[0, 0, 2*(1+v)/E]])
+stress = compliance_matrix*tilda_sigma
+inside_of_integral = sym.Transpose(tilda_sigma)*stress
+print(inside_of_integral)

@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\linespread{1.5}
+\begin{document}
+\title{Homework 1}
+\author{Mauro Patimo}
+\date{\today}
+
+\maketitle
+
+\section{Problem 1}
+In order to achieve equilibrium all the momentums must be counteracted, and the net momentum has to be zero. For this to happen the following condition must be satisfied:
+\begin{align*}
+\frac{\partial{\sigma_x}}{\partial{x}}+\frac{\partial \tau{{yx}}}{\partial y} = 0 \\
+\frac{\partial{\sigma_y}}{\partial{y}}+\frac{\partial \tau{{yx}}}{\partial x} = 0
+\end{align*}
+Since $\delta_x=\delta_y$ because it is a cube, and $\sigma_x=\sigma_y$ $\rightarrow$ $\frac{\partial \tau_{xy}}{\partial x}= \frac{\partial \tau_{yx}}{\partial y}$
+
+\section{Problem 2}
+\subsection*{a}
+$\widetilde{S}
+= \begin{pmatrix}
+    \frac{1}{E_L} & -\frac{\nu_{TL}}{E_T} & \frac{\nu_{TL}}{E_T} & 0 & 0 & 0\\
+    -\frac{\nu_{LT}}{E_L} & \frac{1}{E_T} & \frac{\nu_{T}}{E_T} & 0 & 0 & 0\\
+    \frac{\nu_{LT}}{E_L} & \frac{\nu_{T}}{E_T} & \frac{1}{E_T} & 0 & 0 & 0\\
+    0 & 0 & 0 & \frac{1}{G_{T}} & 0 & 0\\
+    0 & 0 & 0 & 0 & \frac{1}{G_{LT}} & 0\\
+    0 & 0 & 0 & 0 & 0 & \frac{1}{G_{LT}}
+\end{pmatrix}$ \\
+Since $G=\frac{E}{2(1+\nu)} \rightarrow G_{LT}=\frac{E_{xy}}{2(1+\nu_{xy})}$ and $G_{T}=\frac{E_{yz}}{2(1+\nu_{yz})}$
+\section*{Problem 3}
+\subsection*{a}
+$\begin{bmatrix}
+    \sigma_x \\
+    \sigma_y \\
+    \sigma_z \\
+    \tau_{yz} \\
+    \tau_{xz} \\
+    \tau_{xy}
+\end{bmatrix}$ \\
+$\sigma=\begin{bmatrix}
+    \sigma_{xx} & \tau_{xy} & \tau_{xz} \\
+    \tau_{yx} & \sigma_{yy} & \tau_{yz} \\
+    \tau_{zx} & \tau_{zy} & \sigma_{zz}
+\end{bmatrix}=
+\begin{bmatrix}
+    100 & 10 & 20 \\
+    10 & -100 & 0 \\
+    20 & 0 & 50
+\end{bmatrix}$ \\
+$\begin{bmatrix}
+    100-\sigma & 10 & 20 \\
+    10 & -100-\sigma & 0 \\
+    20 & 0 & 50-\sigma
+\end{bmatrix}$ \\ \\
+$\sigma^3-I_1\sigma^2+I_2\sigma-I_3$ \\ \\
+$I_1=\sigma_{11}+\sigma_{22}+\sigma_{33}=100-100+50=50$\\
+$I_2=\sigma_{11}\sigma_{22}+\sigma_{22}\sigma_{33}+\sigma_{33}\sigma_{11}-\sigma^2_{12}-\sigma^2_{23}-\sigma^2_{31}=100(-100)+(-100)50+50(100)-10^2-0^2-20^2=10000-5000+5000-100-400=-10500$\\
+$I_3=\sigma_{11}\sigma_{22}\sigma_{33}-\sigma_{11}\sigma_{23}^2-\sigma_{22}\sigma^2_{31}-\sigma_{33}\sigma_{12}^2+2\sigma_{12}\sigma_{23}\sigma_{31}=100(-100)(50)-100(0)^2-(-100)(20)^2-50(10^2)+2(10)(0)(20)=-465000$ \\
+$\phi=\frac{1}{3}cos^{-1}\Big(\frac{2I_1^3-9I_1I_2+27I_3}{2(I_1^2-3I_2)^{\frac{3}{2}}}\Big)=\frac{1}{3}cos^{-1}\Big(\frac{2*50^3-9*50*(-10500)+27*(-465000)}{2(50^2-3(-10500))^{\frac{3}{2}}}\Big)=0.739992414341282$rad\\
+$\sigma_I=\frac{I_1}{3}+\frac{2}{3}(\sqrtsign{I_2^2-3I_2})cos\phi=107.445$ \\
+$\sigma_{II}=\frac{I_1}{3}+\frac{2}{3}(\sqrtsign{I_1^2-3I_2})cos(\phi -\frac{2\pi}{3})=43.060227$ \\
+$\sigma_{III}=\frac{I_1}{3}+\frac{2}{3}(\sqrtsign{I_1^2-3I_2})cos(\phi -\frac{4\pi}{3})=-100.505$ \\
+\subsection*{b}
+$\sigma_e = \sqrtsign{\frac{(\sigma_{I}-\sigma_{II})^2+(\sigma_{II}-\sigma_{III})^2+(\sigma_{III}-\sigma_{I})^2}{2}}=184.4$MPa\\
+Based on Von Mises criteria, the body fails.
+\end{document}
