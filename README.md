@@ -1,0 +1,1 @@
+All of this work comes from AERSP 597-005 at Penn State Spring 2024. Please use this material to help you (we should all help each other and this is my way to), but make the professor aware if anything comes from here.
